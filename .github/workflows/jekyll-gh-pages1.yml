@@ -30,23 +30,11 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Instalar las Dependencias del Proyecto
+      - name: Instalar las Dependencias
         run: npm install
 
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+      - name: Construir el Proyecto (Build)
+        run: npm run build
 
       - name: Asegurar el 404 fallback
         run: cp ./dist/index.html ./dist/404.html
@@ -60,5 +48,5 @@ jobs:
           path: "./dist"
 
       - name: Publicar Github Pages
-        id: deploy_final
-        uses: actions/deploy-pages@v4 
+        id: deployment
+        uses: actions/deploy-pages@v4
