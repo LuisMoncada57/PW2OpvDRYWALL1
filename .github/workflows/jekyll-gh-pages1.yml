@@ -60,5 +60,5 @@ jobs:
           path: "./dist"
 
       - name: Publicar Github Pages
-        id: deployment
+        id: deploy_final
         uses: actions/deploy-pages@v4 
