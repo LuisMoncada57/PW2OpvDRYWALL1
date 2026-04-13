@@ -5,8 +5,6 @@ import * as glob from "glob";
 import HtmlCssPurgePlugin from "vite-plugin-purgecss";
 import HandlebarsPlugin from "vite-plugin-handlebars";
 
-// Si no tienes una carpeta data con un index.js, comenta la siguiente línea
-// import getData from "./data/index"; 
 
 function obtenerHtmlFiles() {
     return Object.fromEntries(
@@ -31,10 +29,10 @@ function obtenerHtmlFiles() {
 export default defineConfig({
     appType: 'mpa',
     // Esto usa la variable de GitHub o la raíz en local
-    base: process.env.DEPLOY_BASE_URL ?? '/', 
+    base: process.env.DEPLOY_BASE_URL ?? '/PW2OpvDRYWALL1/', 
     
     build: {
-        cssCodeSplit: false, // ✅ Mantenemos tu preferencia de un solo CSS
+        cssCodeSplit: false, // Mantenemos tu preferencia de un solo CSS
         rollupOptions: {
             input: obtenerHtmlFiles(),
         }
